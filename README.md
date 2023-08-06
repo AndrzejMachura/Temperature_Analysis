@@ -1,6 +1,6 @@
 # Mean temperature growth analysis in Warsaw, Poland
 
-This analysis is using historical temperature data to forecast future montly mean and yearly mean temperature in Warsaw, Poland using SARIMA model.
+This analysis is using historical temperature data to forecast future monthly mean and yearly mean temperature in Warsaw, Poland using SARIMA model.
 
 ## Content
 1. [Data Source](#data-source)
