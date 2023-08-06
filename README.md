@@ -24,7 +24,7 @@ Analysis was performed in the following steps:
     - Location (Warsaw - Poland) is defined by geographical coordinates. 
     - Weather data is acquired for period from 1965-01-01 until today. 
     - *get_data* function is stored in [data downloader](https://github.com/AndrzejMachura/Temperature_Analysis/blob/main/01.Scripts/data_downloader.py) script.
-2. Before analysis can be performed some data engineering have to by done. 
+2. Before analysis can be performed some data engineering have to be done. 
     - Historical data published by Open-Meteo are delayed few days so empty rows for not existing dated have to be removed. 
     - Next step is to group data by monthly mean temperature.
 3. As a forecasting method SARIMA model was used, which is Seasonal Autoregressive Integrated Moving Average method for time series forecasting with univariate data containing trends and seasonality. This step is divided into some sub-steps:
@@ -35,8 +35,8 @@ Analysis was performed in the following steps:
 4. Basing on the historical and forecasted temperature the yearly mean temperature was calculated.
 5. Yearly mean temperature was used to generate temperature change trendline, which is second order curve. *polyfit* and *poly1d* methods from *Numpy* library were used.
 6. Analysis results are gathered in two charts:
-    - First chart is showing convergence between test and train data.
-    - Second chart is showing monthly mean temperature for historical data, 10 years forecast, yearly mean temperature and trendline. Trendline equation is noted in the right lower corner of chart.
+    - First chart shows convergence between test and train data.
+    - Second chart shows monthly mean temperature for historical data, 10 years forecast, yearly mean temperature and trendline. Trendline equation is noted in the right lower corner of chart.
 7. Output:
     - *year_mean_temperature.csv* -  csv file containing yearly mean temperature for period from January 1965 until next ten years from today.
     - *params.csv* - csv file containing SARIMA hyperparameters and R<sup>2</sup> coeficien for each hyperparameters set.
