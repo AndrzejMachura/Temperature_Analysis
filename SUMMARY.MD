@@ -20,10 +20,10 @@ Temperature data was utilised from [Open-Meteo.com](https://open-meteo.com/)
 
 Analysis was performed in the following steps:
 
-1. Main script ([temperature analysis](.\temperature_analysis.py)) is using function *get_data* to connect to [Open-Meteo.com](https://open-meteo.com/) API and receive requested temperature for each day in defined period. 
+1. Main script ([temperature analysis](https://github.com/AndrzejMachura/Temperature_Analysis/blob/main/01.Scripts/temperature_analysis.py)) is using function *get_data* to connect to [Open-Meteo.com](https://open-meteo.com/) API and receive requested temperature for each day in defined period. 
     - Location (Warsaw - Poland) is defined by geographical coordinates. 
     - Weather data is acquired for period from 1965-01-01 until today. 
-    - *get_data* function is stored in [data downloader](.\data_downloader.py) script.
+    - *get_data* function is stored in [data downloader](https://github.com/AndrzejMachura/Temperature_Analysis/blob/main/01.Scripts/data_downloader.py) script.
 2. Before analysis can be performed some data engineering have to by done. 
     - Historical data published by Open-Meteo are delayed few days so empty rows for not existing dated have to be removed. 
     - Next step is to group data by monthly mean temperature.
@@ -57,14 +57,14 @@ Final SARIMA model was run with following parameters:
 
 It acquired R<sup>2</sup> score equal 0.9509. Test data and train data shows good convergence, what is shown in figure below:
 
-<img src="./Test_train.png" width="400" height="350">
+<img src="https://github.com/AndrzejMachura/Temperature_Analysis/blob/main/02.Results/Test_train.png" width="400" height="350">
 
 ### Results
 
 Analysis results are gathered in chart below. Historical monthly mean temperature is marked with blue line, the 10 years forecast is marked with orange one. Green line represents yearly mean temperature. Trendline was build on the yearly mean temperature with usage of polyline of second. Equation of the trendline is presented as following:<br>
 f(x) = 0.001x<sup>2</sup> -0.028x +8.004
 
-![plot](./temperature_forecast.jpg)
+![plot](https://github.com/AndrzejMachura/Temperature_Analysis/blob/main/02.Results/temperature_forecast.jpg)
 
 ## Summary
 
